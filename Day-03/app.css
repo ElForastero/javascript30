@@ -1,0 +1,67 @@
+:root {
+    --cube-color: #a64d73;
+    --cube-opacity: .5;
+    --cube-size: 200px;
+    --perspective: calc(var(--cube-size) * 4);
+}
+
+html, body {
+    height: 100%;
+}
+
+.scene {
+    perspective: var(--perspective);
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.cube {
+    transform-style: preserve-3d;
+    margin: auto;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    animation: rotate 10s infinite linear;
+}
+
+.side {
+    position: absolute;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    background-color: var(--cube-color);
+    opacity: var(--cube-opacity);
+    border: 1px solid black;
+}
+
+.side--front {
+    transform: translateZ(calc(var(--cube-size) / 2));
+}
+
+.side--back {
+    transform: translateZ(calc(var(--cube-size) / 2 * -1));
+}
+
+.side--top {
+    transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.side--bottom {
+    transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2 * -1));
+}
+
+.side--left {
+    transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.side--right {
+    transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2  * -1));
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
