@@ -17,5 +17,5 @@ const process = (event) => {
 };
 
 const inputs = document.getElementsByTagName('input');
-Array.prototype.map.call(inputs, input => input.addEventListener('input', process));
+[...inputs].map(input => input.addEventListener('input', process));
 
