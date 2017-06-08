@@ -9,3 +9,5 @@
 [Day-04 Array cardio](Day-04)
 
 [Day-05 Flexbox gallery](Day-05)
+
+[Day-06 Ajax Typeahead](Day-06)
